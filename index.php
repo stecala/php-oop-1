@@ -1,8 +1,8 @@
 <?php
     require_once './movieClass.php';
 
-    $firstMovie = new Movie('Inception' , 'Azione' , '2.28h');
-    $secondMovie = new Movie('Nightmare Before Christmas','Animazione','1.16h');
+    $firstMovie = new Movie('Inception' , 'Azione' , 2.28);
+    $secondMovie = new Movie('Nightmare Before Christmas','Animazione', 1.16);
     $movieList = [$firstMovie , $secondMovie];
 ?>
 
@@ -30,7 +30,7 @@
                     <?php echo 'Genere: '. $movie->getGenre() ?>
                 </li>
                 <li>
-                    <?php echo 'Durata: '. $movie->getLength() ?>
+                    <?php echo 'Durata: '. $movie->getLength().'H' ?>
                 </li>
             </ol>
         </li>
