@@ -1,29 +1,9 @@
 <?php
-    class Movie {
-        private $title;
-        private $genre;
-        private $length;
-        
-        function __construct($_title , $_genre , $_length)
-        {
-            $this->title = $_title;
-            $this->genre = $_genre;
-            $this->length = $_length;
-        }
-
-        public function getTitle(){
-           return $this->title;
-        }
-        public function getGenre(){
-            return $this->genre;
-         }
-         public function getLength(){
-            return $this->length;
-         }
-    }
+    require_once './movieClass.php';
 
     $firstMovie = new Movie('Inception' , 'Azione' , '2.28h');
     $secondMovie = new Movie('Nightmare Before Christmas','Animazione','1.16h');
+    $movieList = [$firstMovie , $secondMovie];
 ?>
 
 
@@ -36,6 +16,26 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>
+        Lista film
+    </h1>
+    <ul>
+        <?php foreach($movieList as $movie){?>
+        <li>
+            <?php 
+                echo $movie->getTitle();
+            ?>
+            <ol>
+                <li>
+                    <?php echo 'Genere: '. $movie->getGenre() ?>
+                </li>
+                <li>
+                    <?php echo 'Durata: '. $movie->getLength() ?>
+                </li>
+            </ol>
+        </li>
+        <?php }?>
+    </ul>
     
 </body>
 </html>
